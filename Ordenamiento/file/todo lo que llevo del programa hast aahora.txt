@@ -1,0 +1,175 @@
+Cosas del programa de Ordenamiento UWU
+
+
+//int cantidad, n, f, valor;
+            //string linea;
+            //cantidad = 0;
+            //Console.Write("Cuantos valores ingresará:");
+            //linea = Console.ReadLine();
+            //n = int.Parse(linea);
+            //for (f = 1; f <= n; f++)
+            //{
+            //  Console.Write("Ingrese el valor:");
+            //linea = Console.ReadLine();
+            //valor = int.Parse(linea);
+            //if (valor >= 1000)
+            //{
+            //  cantidad = cantidad + 1;
+            //}
+            //}
+            //Console.Write("La cantidad de valores ingresados mayores o iguales a 1000 son:");
+            //Console.Write(cantidad);
+            //Console.ReadKey();
+
+
+
+
+
+
+/////////////////////////Cosas del programa verdadero UWU////////
+
+
+            
+
+
+
+                                // Leer archivo UwU
+                                void leerArchivo()
+                                {
+                                    string rutaCompleta = @"C:\\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt";
+
+                                    string line = "";
+                                    using (StreamReader file = new StreamReader(rutaCompleta))
+                                    {
+                                        // OTRA FORMA DE LEER TODO EL ARCHIVO
+
+                                        while ((line = file.ReadLine()) != null)                //Leer linea por linea
+                                        {
+                                            Console.WriteLine("Los datos del archivo son: " + line);
+                                            Console.ReadLine();
+                                        }
+                                    }
+                                }
+                                leerArchivo();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            string opcion;
+            Console.WriteLine("Deseas ordenar los numeros?");
+            Console.Write("A. Si, B. No --> ");
+            opcion = Console.ReadLine();
+            if (opcion == "A")
+            {
+                void OrdenarNumeros()
+                {
+                    //Cuadrar esto para que se organicen UwU
+                    //
+                    //int[] numero = new int[numeros]; //Vector, que alamcena los numeros Uwu
+
+                    int[] arr = new int[10] { 23, 9, 85, 12, 99, 34, 60, 15, 100, 1 };
+                    int n = 10, i, j, val, flag;
+                    Console.WriteLine("Insertion Sort");
+                    Console.Write("Initial array is: ");
+                    for (i = 0; i < n; i++)
+                    {
+                        Console.Write(arr[i] + " ");
+                    }
+                    for (i = 1; i < n; i++)
+                    {
+                        val = arr[i];
+                        flag = 0;
+                        for (j = i - 1; j >= 0 && flag != 1;)
+                        {
+                            if (val < arr[j])
+                            {
+                                arr[j + 1] = arr[j];
+                                j--;
+                                arr[j + 1] = val;
+                            }
+                            else flag = 1;
+                        }
+                    }
+                    Console.Write("\nSorted Array is: ");
+
+                    for (i = 0; i < n; i++)
+                    {
+                        Console.Write(arr[i] + " ");
+
+                        //
+                        //using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\ListaOrdenada.txt"))
+                        //{
+                        //  foreach (string line in numero)
+                        //{
+                        //  if (!line.Contains("Segunda"))
+                        //{
+                        //  File.AppendAllText(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt", numero + " Estos numeros fueron los que se eligieron" + Environment.NewLine);
+
+                        //file.WriteLine(numero);
+                        //}
+                        //}
+                        //}
+                    }
+
+                }
+                OrdenarNumeros();
+
+            }
+            else if (opcion == "B")
+            {
+                Console.Write("Gracias por usar el programa UwU");
+                break;
+            }
+        }
+                        else
+                        {
+                            Console.WriteLine("Lo siento, pero ha ocurrido un error :C");
+                            //while() { //Lñenar el WHILE
+                              //  Console.Write("cantidad de numeros:");// Solicitar HHHH numeros a generar po teclado.
+                               // cantidadN = Console.ReadLine();
+                                //numeros = int.Parse(cantidadN);
+                                //GenerarNumeros();
+                            //}
+                        }
+
+
+    //Insertar estos numeros en un archivo de texto, luego leer dicho archivo y almacenar los valores en un vector
+
+    //ORdenarlos e insertarlos en el archivo de texto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+
+para leer e insertar en el archivo los nuevos datos UWU
+
+                for (i = 0; i < n; i++)
+                {
+                    Console.Write(arr[i] + " ");
+
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\ListaOrdenada.txt"))
+                    {
+                      foreach (string line in numero)
+                    {
+                      if (!line.Contains("Segunda"))
+                    {
+                      File.AppendAllText(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt", numero + " Estos numeros fueron los que se eligieron" + Environment.NewLine);
+
+                    file.WriteLine(numero);
+                    }
+                }
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////7
+            int numeros;
+            string cantidadN;
+            try
+            {
+                Console.Write("cantidad de numeros:");// Solicitar HHHH numeros a generar po teclado.
+                cantidadN = Console.ReadLine();
+                numeros = int.Parse(cantidadN);
+
+                var random = new Random(numeros);
+                GenerarNumeros(ref numeros, random);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No es un numero, ingresa un numero >:v/: ");
+                Console.Write("cantidad de numeros:");// Solicitar HHHH numeros a generar po teclado.
+                cantidadN = Console.ReadLine();
+                numeros = int.Parse(cantidadN);
+
+                var random = new Random(numeros);
+                GenerarNumeros(ref numeros, random);
+
+            }
+            Console.Read();
+
+            //cuando se guarde el archivo, lo lea y los datos que hay ahí, los almacene en un vector y que luego
+            // ese vector los imprima en la consola y muesttre los minutos y horas.
+
+        }
+
+        //Leer Archivo  UWU
+        private static void LeerArchivo(ref int[] lista)
+        {
+            string rutaCompleta = @"C:\\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt";
+
+            string line = "";
+            using (StreamReader file = new StreamReader(rutaCompleta))
+            {
+                // OTRA FORMA DE LEER TODO EL ARCHIVO
+
+                while ((line = file.ReadLine()) != null)                //Leer linea por linea
+                {
+                    Console.WriteLine("Los datos del archivo son: " + line + "\n");
+                    Console.ReadLine();
+
+                    Option2(ref lista);
+                }
+            }
+        }
+
+        private static void Option2(ref int[] lista)
+        {
+            Console.WriteLine("Es hora de ordenar estos numeros >:v/");
+            OrdenarLista(ref lista);
+        }
+        private static void Option(ref int[] lista)
+        {
+            string opcion1;
+            Console.WriteLine("Deseas ordenar Leer el archivo?");
+            Console.Write("A. Si, B. No --> ");
+            opcion1 = Console.ReadLine();
+            if (opcion1 == "A")
+            {
+                LeerArchivo(ref lista);
+            }
+            else if (opcion1 == "B")
+            {
+                Console.Write("Es hora de ordenar los datos UWU");
+                OrdenarLista(ref lista);
+            }
+        }
+
+
+        private static void InsertNumeros(ref int numerosLista)
+        {
+            File.AppendAllText(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt", numerosLista + " Estos numeros fueron los que se eligieron" + Environment.NewLine);
+            // Se agregan al vector :)
+            int[] lista = new int[numerosLista];
+
+            Option(ref lista);
+        }
+
+        private static void GenerarNumeros(ref int numeros, Random random)
+        {
+            int f;
+            for (f = 1; f <= numeros; f++) // Generar esa cantidad de numeros entre:
+            {
+                var valores = random.Next(-1000, 999); // -1000 y 999, elegidos al azar.
+                Console.WriteLine("valor: " + valores);
+
+#pragma warning disable CS1718 // Comparación hecha a la misma variable
+                if (valores == valores) //Agregando los numeros al archivo de TExto UwU
+                {
+                    int numerosLista = valores;
+                    InsertNumeros(ref numerosLista);
+                }
+                else
+                {
+                    Console.Write("Lo siento, pero no se pudieron insertar los datos :C");
+                }
+            }
+        }
+        private static void OrdenarLista(ref int[] lista)
+        {
+            //Cuadrar esto para que se organicen UwU
+            //
+            //int[] numero = new int[lista]; //Vector, que alamcena los numeros Uwu
+
+            //int[] arr = new int[10] { 23, 9, 85, 12, 99, 34, 60, 15, 100, 1 };
+            int n = 10, i, j, val, flag;
+            Console.WriteLine("Es hora de ordenar la lista con: Insertion Sort");
+            Console.Write("Lista inicial: ");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(lista[i] + " ");
+            }
+            for (i = 1; i < n; i++)
+            {
+                val = lista[i];
+                flag = 0;
+                for (j = i - 1; j >= 0 && flag != 1;)
+                {
+                    if (val < lista[j])
+                    {
+                        lista[j + 1] = lista[j];
+                        j--;
+                        lista[j + 1] = val;
+                    }
+                    else flag = 1;
+                }
+            }
+            Console.Write("\nLista Ordenada: ");
+
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(lista[i] + " ");
+
+                //
+                //using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\ListaOrdenada.txt"))
+                //{
+                //  foreach (string line in numero)
+                //{
+                //  if (!line.Contains("Segunda"))
+                //{
+                //  File.AppendAllText(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt", numero + " Estos numeros fueron los que se eligieron" + Environment.NewLine);
+
+                //file.WriteLine(numero);
+                //}
+                //}
+                //}
+            }
+        }
