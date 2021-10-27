@@ -26,3 +26,10 @@ C:\Users\SENA\Documents\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.csprojA
 C:\Users\SENA\Documents\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.csproj.CoreCompileInputs.cache
 C:\Users\SENA\Documents\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.exe
 C:\Users\SENA\Documents\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.pdb
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\bin\Debug\Ordenamiento.exe.config
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\bin\Debug\Ordenamiento.exe
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\bin\Debug\Ordenamiento.pdb
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.csproj.AssemblyReference.cache
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.csproj.CoreCompileInputs.cache
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.exe
+C:\Users\ekigo\Desktop\INSERT SORT\InsertSort_Hugo\Ordenamiento\Ordenamiento\obj\Debug\Ordenamiento.pdb
