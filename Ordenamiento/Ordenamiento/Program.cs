@@ -10,7 +10,7 @@ namespace Ordenamiento
 {
     class Program
     {
-       
+
         static void Main()
         {
             Console.WriteLine("--------------------------------------------------------------------------------------");
@@ -76,50 +76,46 @@ namespace Ordenamiento
             //Ordenar Lista--------------------------------------------
             void OrdenarLista()
             {
-                int[] listaNumeros =  lista;
-                //int ordenamiento = Convert.ToInt32(rutaCompleta);
-                //ordenamiento = int.Parse(rutaCompleta);
-                int n = 1;
-                int i, j;
-                int val, flag;
+                List<int> arr = new List<int>();
 
-                //int[] numero = new int[lista]; //Vector, que alamcena los numeros Uwu
-                //double listaSort = new double[lista] { };
-                //double listaActual = convertirruta[i];
-                Console.Write("\nEs hora de ordenar la lista con: --- Insertion Sort --- \n");
-                Console.Write("Lista inicial: " + listaNumeros); //Esta parte no los esta cogiendo
-
-                for (i = 1; i < n; i++)
+                StreamReader sr = new StreamReader("D:\\uwu.txt");
                 {
-                    val = listaNumeros[i];
-                    flag = 0;
-                    for (j = i - 1; j >= 0 && flag != 1;)
+                    while (!sr.EndOfStream)
                     {
-                        if (val < listaNumeros[j])
-                        {
-                            listaNumeros[j + 1] = listaNumeros[j];
-                            j--;
-                            listaNumeros[j + 1] = val;
-                        }
-                        else flag = 1;
+                        int x = Convert.ToInt32(sr.ReadLine());
+                        arr.Add(x);
                     }
                 }
-                Console.Write("\nLista Ordenada: \n");
+                //int ordenamiento = Convert.ToInt32(rutaCompleta);
+                //ordenamiento = int.Parse(rutaCompleta);
+                int n = 5, i, j, val;
+                Console.Write("\nEs hora de ordenar la lista con: --- Insertion Sort --- \n");
+                Console.Write("Lista Inicial: ");
                 for (i = 0; i < n; i++)
                 {
-                    Console.Write(listaNumeros[i] + " \n" );
-                    //using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\ListaOrdenada.txt"))
-                    //{
-                    //  foreach (string line in numero)
-                    //{
-                    //  if (!line.Contains("Segunda"))
-                    //{
-                    //  File.AppendAllText(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt", numero + " Estos numeros fueron los que se eligieron" + Environment.NewLine);
-
-                    //file.WriteLine(numero);
-                    //}
-                    //}
-                    //}
+                    Console.Write(arr[i] + " ");
+                }
+                for (i = 1; i < n; i++)
+                {
+                    val = arr[i];
+                    for (j = i - 1; j >= 0;)
+                    {
+                        if (val < arr[j])
+                        {
+                            arr[j + 1] = arr[j];
+                            j--;
+                            arr[j + 1] = val;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                Console.Write("\nLista Ordenada: ");
+                for (i = 0; i < n; i++)
+                {
+                    Console.Write(arr[i] + " ");
                 }
 
                 MenuC();
@@ -129,7 +125,7 @@ namespace Ordenamiento
             //Menu final Uwu
             void MenuC()
             {
-                Console.Write("Desea Regresar? o ¿De desea salirse del programa?\n");
+                Console.Write("\n¿Desea Regresar? o ¿De desea salirse del programa?\n");
                 Console.Write("R. Regresar o E. Salir\n");
 
                 string opcion;
@@ -144,6 +140,7 @@ namespace Ordenamiento
                 {
                     Console.Write("Gracias por utilizarme Uwu!! Me voy ");
                 }
+
                 else if (opcion != "R" && opcion != "E")
                 {
                     Console.Write("Porfavor, ingresa un valor valido >:)\n");
@@ -154,7 +151,7 @@ namespace Ordenamiento
             //Leer Archivo UwU
             void LeerArchivo()
             {
-                string rutaCompleta = @"C:\\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt";
+                string rutaCompleta = @"D:\\uwu.txt";
                 string line = "";
                 using (StreamReader file = new StreamReader(rutaCompleta))
                 {
@@ -167,54 +164,54 @@ namespace Ordenamiento
                 }
             }
             //--------------------------------------------------------------------------
-            //Genera los Numeros AL Azar
-            void GenerarNumeros()
-            {
-                int numeros;
-                string cantidadN;
-                int f;
-
-                try
+                void GenerarNumeros()
                 {
-                    Console.Write("cantidad de numeros:");// Solicitar HHHH numeros a generar po teclado.
-                    cantidadN = Console.ReadLine();
-                    numeros = int.Parse(cantidadN);
+                    int numeros;
+                    string cantidadN;
+                    int f;
 
-                    var random = new Random(numeros);
-
-                    for (f = 1; f <= numeros; f++) // Generar esa cantidad de numeros entre:
+                    try
                     {
-                        var valores = random.Next(-1000, 999); // -1000 y 999, elegidos al azar.
-                        Console.WriteLine("valor: " + valores + " Dato insertado con Exito!!\n");
+                        Console.Write("cantidad de numeros:");// Solicitar HHHH numeros a generar po teclado.
+                        cantidadN = Console.ReadLine();
+                        numeros = int.Parse(cantidadN);
+
+                        var random = new Random(numeros);
+
+                        for (f = 1; f <= numeros; f++) // Generar esa cantidad de numeros entre:
+                        {
+                            var valores = random.Next(-1000, 999); // -1000 y 999, elegidos al azar.
+                            Console.WriteLine("valor: " + valores + " Dato insertado con Exito!!\n");
 #pragma warning disable CS1718 // Comparación hecha a la misma variable
-                        if (valores == valores)
-                        {
-                            int listaNumeros = valores;
-                            File.AppendAllText(@"C:\Users\USUARIO\Documents\SENA2021_Trimetre4\Hugo_Hernan\Tareas\proyecto1_Insertion_Sort\Ordenamiento\file\file.txt", listaNumeros + " Dato Elegido" + Environment.NewLine);
+                            if (valores == valores)
+                            {
+                                int listaNumeros = valores;
+                                File.AppendAllText(@"D:\\uwu.txt", listaNumeros + Environment.NewLine);
 
-                            Stopwatch sw = new Stopwatch(); // Creación del Stopwatch
-                            sw.Start(); // Iniciar la medición
-                            lista.Append(listaNumeros);
-                            
-                            sw.Stop(); // Detener la medición.
-                            Console.WriteLine("Tiempo pasado: {0}", sw.Elapsed.ToString("hh\\:mm\\:ss\\.fff"));
+                                Stopwatch sw = new Stopwatch(); // Creación del Stopwatch
+                                sw.Start(); // Iniciar la medición
+                                lista.Append(listaNumeros);
 
-                            // Se agregan al vector :)
-                            //lista = new int[valores]; //Esta es la que manejo en las demas funciones Uw
-                        }
-                        else
-                        {
-                            Console.Write("Lo siento, pero no se pudieron insertar los datos :C");
+                                sw.Stop(); // Detener la medición.
+                                Console.WriteLine("Tiempo pasado: {0}", sw.Elapsed.ToString("hh\\:mm\\:ss\\.fff"));
+
+                                // Se agregan al vector :)
+                                //lista = new int[valores]; //Esta es la que manejo en las demas funciones Uw
+                            }
+                            else
+                            {
+                                Console.Write("Lo siento, pero no se pudieron insertar los datos :C");
+                            }
                         }
                     }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("No es un numero, ingresa un numero >:v/: ");
+                        GenerarNumeros();
+                    }
                 }
-                catch (Exception)
-                {
-                    Console.WriteLine("No es un numero, ingresa un numero >:v/: ");
-                    GenerarNumeros();
-                }
+                Console.Read();
             }
-            Console.Read();
         }
     }
-}
+/*Todo Terminado uwu*/
